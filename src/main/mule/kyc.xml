@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="259545b6-6b42-44aa-92b5-205058dce034" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="kycFlow" doc:id="94ef7615-a5e0-402c-ae70-33a29e54901b" >
+		<http:listener doc:name="Listener" doc:id="dff1fbce-cba0-487c-87a1-529138f170c8" config-ref="HTTP_Listener_config" path="kyc"/>
+		<logger level="INFO" doc:name="Logger" doc:id="711d29a5-3b78-4de6-ac6d-0d291a066985" message="hey"/>
+	</flow>
+</mule>
